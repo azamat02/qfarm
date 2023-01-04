@@ -752,6 +752,9 @@ body {
         margin: 200px 0;
 
         .inner {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
             width: 640px;
             padding: 50px;
             background: #1E1E1E;
@@ -857,6 +860,71 @@ body {
                 button {
                     font-size: 20px;
                 }
+            }
+
+            .available-container {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 12px 24px;
+                border-radius: 15px;
+                margin: 24px 0;
+                background: #353535;
+                color: white;
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            .amount {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 12px 24px;
+                border-radius: 15px;
+                margin: 24px 0;
+                background: #353535;
+                color: white;
+                font-size: 20px;
+                font-weight: bold;
+
+                button {
+                    cursor: pointer;
+                    border: none;
+                    font-size: 20px;
+                    font-weight: bold;
+                    padding: 0 12px;
+                    background: #696969;
+                    color: #353535;
+                    border-radius: 5px;
+                }
+
+                input {
+                    background: transparent;
+                    border: none;
+                    //font-size: 20px;
+                    color: white;
+                    outline: none;
+                    text-align: center;
+                    font-weight: bold;
+                    font-size:1.3em;
+                    padding: 0 .5em;
+                }
+            }
+
+            .price {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 12px 24px;
+                border-radius: 15px;
+                margin: 24px 0;
+                background: #353535;
+                color: white;
+                font-size: 20px;
+                font-weight: bold;
             }
         }
     }
