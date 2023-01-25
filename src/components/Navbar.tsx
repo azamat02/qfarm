@@ -4,7 +4,10 @@ import Dropdown from "./Dropdown";
 import {ChevronRightIcon} from "@heroicons/react/24/outline";
 import {useNavigate} from "react-router-dom";
 
-export default function Navbar() {
+export interface LayoutProps  { 
+    metamask?: any;
+ }
+export default function Navbar(props?: LayoutProps) {
     const navigate = useNavigate()
     const investorButtonContent = (
         <div className="dropdown-button-content">
@@ -33,7 +36,15 @@ export default function Navbar() {
             </button>
         </div>
     )
-
+    const navBtn = () => {
+        if(props?.metamask)
+            return props?.metamask();
+        return (
+            <button className="default-button" onClick={()=>{navigate('/mint')}}>
+                    GET STARTED
+            </button>
+        )
+    } 
     return (
         <div className="navbar">
             <div className="logo" onClick={()=>{navigate('/')}}>
@@ -43,9 +54,7 @@ export default function Navbar() {
                 <Dropdown buttonTitle={"Investors"} content={investorButtonContent}/>
                 <Dropdown buttonTitle={"Owners"} content={ownerButtonContent}/>
                 <p>Our story</p>
-                <button className="default-button" onClick={()=>{navigate('/mint')}}>
-                    GET STARTED
-                </button>
+                {navBtn()}
             </div>
         </div>
     )
